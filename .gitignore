@@ -1,0 +1,12 @@
+*.asv
+*.swap
+*.[oa]
+*~
+*.csv
+*.doc
+*.docx
+*.7z
+*.zip
+*.png
+*.jpg
+*.mat
