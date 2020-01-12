@@ -53,14 +53,20 @@ def plot_transient(sample_df,sample_name,save_dir):
     # collectorEmitterCurrentSingal
     # plot the time sequence parameter
     plt.subplot(224)
-    plt.plot(sample_df.index.values, sample_df.collectorEmitterCurrentSingal.values)
-    plt.title('Collector Emitter Current',fontsize ='xx-large' )
+    try:
+        plt.plot(sample_df.index.values, sample_df.collectorEmitterCurrentSingal.values)
+        plt.title('Collector Emitter Current',fontsize ='xx-large' )
+    except:
+        plt.plot(sample_df.index.values, sample_df.P.values)
+        plt.title('Power ',fontsize ='xx-large' )
+    
     plt.xlabel('Time /10ns',fontsize ='xx-large')
     plt.ylabel('Current /A',fontsize ='xx-large')
     plt.xticks(fontsize=12)
     plt.yticks(fontsize=12)
-    plt.ylim([-2,12])
+#    plt.ylim([-2,12])
     plt.tight_layout()
     plt.savefig(save_dir+sample_name+'.png')
 
-    plt.clear("all")
+    plt.cla()
+    plt.close("all")
