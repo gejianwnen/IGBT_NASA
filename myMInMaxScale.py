@@ -39,7 +39,7 @@ if 'temperature' not in cols:
     cols.append('temperature')
 
 # train_df = pd.read_csv('./temp/train_feature_df.csv')
-train_df = pd.read_csv('./temp/train_feature_df_outliers.csv')
+train_df = pd.read_csv('./temp/train_feature_df_outliers_subsample.csv')
 cols = train_df.columns
 feature_df = train_df.loc[:,cols]
 
@@ -51,7 +51,7 @@ fliter = MinMaxScaler()
 for col in cols_to_use:
     feature_df[col] = fliter.fit_transform(feature_df[col].values.reshape(-1, 1))
     
-feature_df.to_csv("temp/train_df_scale.csv",index = False)
+feature_df.to_csv("temp/train_df_scale_subsample.csv",index = False)
 X = feature_df[cols_to_use].values
 feature_df.head()
 

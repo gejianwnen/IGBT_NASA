@@ -10,7 +10,7 @@ from torch import nn
 
 from torch.utils.data import Dataset
 
-class MyDataset(Dataset):
+class myDataset(Dataset):
     def __init__(self, x_train, y_train, transform=None):
         self.x_train = x_train
         self.y_train = y_train
