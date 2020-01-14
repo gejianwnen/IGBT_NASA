@@ -8,9 +8,9 @@ import numpy as np
 import torch
 from torch import nn
 
-class neuralNetwork2(nn.Module):
+class neuralNetwork3(nn.Module):
     def __init__(self, in_dim, n_hidden_1,n_hidden_2, out_dim,droprate = 0.5):
-        super(neuralNetwork2, self).__init__()
+        super(neuralNetwork3, self).__init__()
         self.layer1 = nn.Sequential(
             nn.Linear(in_dim, n_hidden_1),
             nn.Dropout(p = droprate),
