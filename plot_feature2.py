@@ -17,5 +17,6 @@ def plot_feature2(df, base_col, save_dir):
         plt.title(col,fontsize = 'x-large')
         plt.tight_layout()
         plt.savefig(save_dir+'filtered_'+col+'.png')
-        plt.clf()
+        plt.cla()
+        plt.close("all")
 
