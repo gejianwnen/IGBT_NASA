@@ -10,7 +10,7 @@ from torch import nn
 
 from torch.utils.data import Dataset
 
-class myDataset_CNN(Dataset):
+class myDataset_RNN(Dataset):
     def __init__(self, x_train, y_train, shape_size = 1024,transform=None):
         self.x_train = x_train
         self.y_train = y_train
@@ -22,7 +22,7 @@ class myDataset_CNN(Dataset):
         return self.size
 
     def __getitem__(self, idx):
-        traindata = self.x_train[idx].view(-1,self.shape_size).unsqueeze_(0)   # use skitimage
+        traindata = self.x_train[idx-6:idx].view(-1,self.shape_size).unsqueeze_(0)   # use skitimage
         label = self.y_train[idx]
 
         sample = {'traindata': traindata, 'label': label}
