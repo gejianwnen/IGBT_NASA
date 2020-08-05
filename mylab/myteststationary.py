@@ -28,6 +28,9 @@ def draw_trend(timeSeries, size):
     rolstd.plot(color='black', label='Rolling Standard')
     plt.legend(loc='best')
     plt.title('Rolling Mean and Standard')
+    max_value = np.max(timeSeries.values)
+    mmin_value = np.min(timeSeries.values)
+    plt.ylim(mmin_value,max_value)
     plt.show()
 
 def draw_ts(timeSeries):
